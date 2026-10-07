@@ -8,7 +8,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
         self.wfile.write(
-            b"Hello from my Docker container!\n"
+            b"Hello from my Docker container - version 1.1!\n"
         )
 
 
