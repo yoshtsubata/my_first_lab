@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: my-first-lab
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: my-first-lab
+
+  template:
+    metadata:
+      labels:
+        app: my-first-lab
+
+    spec:
+      containers:
+        - name: my-first-lab
+          image: yoshtsubata/my_first_lab:1.1
+          ports:
+            - containerPort: 8000 
+          env:
+            - name: APP_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: my-first-lab-config
+                  key: APP_ENV
+            - name: APP_VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: my-first-lab-config
+                  key: APP_VERSION
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: my-first-lab-secret
+                  key: API_KEY
