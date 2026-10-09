@@ -8,7 +8,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
         self.wfile.write(
-            b"Hello from my Docker container - version 1.1!\n"
+            b"Hello from my Docker container - version 1.2!\n"
         )
 
 
@@ -17,3 +17,6 @@ server = HTTPServer(("0.0.0.0", 8000), Handler)
 print("Server listening on port 8000")
 
 server.serve_forever()
+
+This is not valid Python !!!
+
