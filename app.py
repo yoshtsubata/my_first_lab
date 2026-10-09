@@ -17,6 +17,3 @@ server = HTTPServer(("0.0.0.0", 8000), Handler)
 print("Server listening on port 8000")
 
 server.serve_forever()
-
-This is not valid Python !!!
-
