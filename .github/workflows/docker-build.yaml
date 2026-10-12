@@ -9,11 +9,11 @@ on:
       - "Dockerfile"
       - ".github/workflows/docker-build.yml"
 
+  workflow_dispatch:
+
 permissions:
   id-token: write
   contents: read
-
-  workflow_dispatch:
 
 jobs:
   docker-build:
