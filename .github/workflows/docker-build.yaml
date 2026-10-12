@@ -50,5 +50,5 @@ jobs:
         run: |
           az aks get-credentials --resource--group rg-lab-aks --name aks-lab-jpe001 --overwrite-existing
 
-      -name: Test AKS connection
-       run: kubectl get nodes
+      - name: Test AKS connection
+        run: kubectl get nodes
