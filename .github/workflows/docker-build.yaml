@@ -9,7 +9,7 @@ on:
       - "Dockerfile"
       - ".github/workflows/docker-build.yml"
 
-permission:
+permissions:
   id-token: write
   contents: read
 
