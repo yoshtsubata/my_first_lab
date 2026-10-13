@@ -52,3 +52,18 @@ jobs:
 
       - name: Test AKS connection
         run: kubectl get nodes
+
+      - name: Update AKS deployment image
+        run: |
+          kubectl set image deployment/my-first-lab \
+            my-first-lab=yoshtsubata/my_first_lab:1.3
+
+      - name: Wait for rollout
+        run: |
+          kubectl rollout status deployment/my-first-lab \
+            --timeout=120s
+
+      - name: Show deployment status
+        run: |
+          kubectl get deployment my-first-lab
+          kubectl get pods -o wide
